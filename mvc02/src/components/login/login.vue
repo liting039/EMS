@@ -4,7 +4,7 @@
     <div class="content">
       <h2>用户登录</h2>
       <el-form
-        label-position="top"
+        label-position="left"
         :model="loginObj"
         status-icon
         :rules="rules"
@@ -12,10 +12,10 @@
         label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item label="密码" prop="username">
+        <el-form-item label="用户名" prop="username">
           <el-input type="text" v-model="loginObj.username" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="password">
+        <el-form-item label="密码" prop="password">
           <el-input type="password" v-model="loginObj.password" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item>
@@ -50,7 +50,7 @@ export default {
         if (valid) {
           // 成功的代码
           var res = await this.$http.post("/login", this.loginObj).then(res => {
-            console.log(res)
+            console.log(res);
             var { meta, data } = res.data;
             if (meta.status === 200) {
               // 登录成功提示框
@@ -77,5 +77,33 @@ export default {
 </script>
 
 <style>
+.box {
+  width: 100%;
+  height: 100%;
+
+  background-color: #2c3742;
+  position: relative;
+}
+#app{
+  margin-top: 0px;
+}
+.content {
+  position: absolute;
+  width: 500px;
+  padding: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: #fff;
+}
+.content h2 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+.mybtn {
+  width: 100%;
+}
 </style>
 
