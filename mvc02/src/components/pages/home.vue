@@ -100,6 +100,7 @@
         </el-aside>
         <el-main>
           <!-- 主体显示 -->
+          <router-view></router-view>
         </el-main>
       </el-container>
     </el-container>
