@@ -125,7 +125,7 @@ export default {
             // 重新请求数据
             this.getAllList()
         },
-        // 索索数据
+        // 搜索数据
         searchData(){
             this.getAllList();
         }
